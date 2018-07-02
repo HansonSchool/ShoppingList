@@ -29,7 +29,9 @@ router.post('/', (req, res) =>{
 			try{
 				a = parseInt(req.body.quantity);
 			}
-			catch(err => res.status(404).json({success: false, error: err}));
+			finally{
+				console.log("Bad value for quantity "+req.body.quantity);
+			}
 			if(a <=0)
 				a = 1;// if you added to the shopping list, must be at least one...
 		if(item == null){// first time in list
