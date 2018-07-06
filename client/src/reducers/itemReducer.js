@@ -11,22 +11,28 @@ const initialState = {
 	items :[],
 	loading:false,
 	
+	
 };
 
 export default function(state = initialState,action){
+	alert("in item reducer.  "+action.type+" checking "+GET_ITEMS);
 	switch(action.type){
 		case GET_ITEMS:
+		alert("found a match! "+action.type+" matches "+GET_ITEMS);
 			return {
 				...state,
+				
 				items:action.payload,
 				loading:false
 			};
 		case DELETE_ITEM:
+		alert("found a match! "+action.type+" matches "+DELETE_ITEM);
 			return {
 				...state,
-				items:state.items.filter(item => item._id != action.payload)// sets items to a new array not containing action.payload
+				items:state.items.filter(item => item._id !== action.payload)// sets items to a new array not containing action.payload
 			}
 		case ADD_ITEM:
+		alert("found a match! "+action.type+" matches "+ADD_ITEM);
 			return{
 				...state,
 				items:[action.payload, ...state.items]// sets items to a new array with old stuff plus the newest item

@@ -51,7 +51,7 @@ ShoppingList.propTypes = {
 	item:PropTypes.object.isRequired
 }
 const mapStateToProps = (state) => ({
-	item:state.item
+	item:state.stuff
 });
 
 
