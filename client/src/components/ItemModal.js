@@ -38,15 +38,7 @@ class ItemModal extends Component{
 	}
 	onChangeQuantity = (e) => {
 		console.log(this.state);
-		/*
-		var q = 0;
-		try{
-			q=;
-		}
-		finally {
-			q = 0;
-		}
-		*/
+		
 		this.setState({quantity: parseInt(e.target.value)});
 	}
 	render(){
